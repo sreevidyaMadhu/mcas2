@@ -1,0 +1,18 @@
+use company_db;
+select * from countries;
+select email,phone_number from employees;
+select * from employees where last_name='Fay'; 
+select first_name,last_name,hire_date from employees where last_name in ('Grant','Whalen');
+select first_name,last_name from employees where job_id='17';
+select * from employees where department_id=8;
+select * from employees;
+select * from jobs;
+select * from dept order by department_name desc;
+select * from employees where last_name like 'K%';
+select first_name,last_name from employees where hire_date between date'1995-01-01' and '1997-12-31';
+select * from jobs where max_salary<8000;
+select lower(email) as email from employees;
+select first_name,last_name from employees where extract(year from hire_date)=1995;
+insert into employees (employee_id,first_name,last_name,email,hire_date,job_id,department_id)values(999,'Paul','Newton','Paul.newton@sqltutorial.org','1999-10-13',5,11);
+delete from employees where department_id=5;
+delete from dept where department_name='Shipping'; 
