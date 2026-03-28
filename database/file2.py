@@ -14,8 +14,8 @@ data=[{"rollno":58,"name":"sreevidya","mark1":20,"mark2":56,"mark3":30},
 #     print(i["name"],"marks:",total)
 # for i in col1.find(["name":{"$regex":"^a"}]):
 #     print(i)
-print(col1.find({"name": {"$regex": "v$"}}))   
-
+# for i in col1.find({"name": {"$regex": "v$"}}):
+#     print(i)
 # for i in col1.find({},{"rollno","name"}).sort({"name":1}):
 #     print(i)
 # qry={"rollno":58}
@@ -23,3 +23,6 @@ print(col1.find({"name": {"$regex": "v$"}}))
 # col1.update_one(qry,new)
 # print(col1.find_one({"rollno":58}))
 
+col1.delete_one({"name":{"$regex":"^s"}})
+for i in col1.find():
+    print(i)
